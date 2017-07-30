@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bgContent"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <!-- LEFT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_weight="3"
+        android:background="@color/teal"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp">
+
+        <TextView
+            android:id="@+id/title_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:textSize="26sp" />
+
+        <TextView
+            android:id="@+id/title_time_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/title_date_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/title_time_label"
+            android:layout_alignParentStart="true"
+            android:textColor="@android:color/white"
+            android:textSize="12sp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/img4" />
+
+    </RelativeLayout>
+    <!-- RIGHT TITLE PART -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/bgTitleRight"
+        android:paddingBottom="20dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="17dp"
+        android:paddingTop="20dp">
+
+
+
+        <TextView
+            android:id="@+id/title_from_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/title_from_to_dots"
+            android:layout_marginTop="-5dp"
+            android:layout_toEndOf="@+id/title_from_to_dots"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/title_from_to_dots_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@id/title_from_address"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/title_from_to_dots"
+            android:src="@color/contentDividerLine" />
+
+        <TextView
+            android:id="@+id/title_to_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_from_to_dots_divider"
+            android:layout_toEndOf="@id/title_from_to_dots"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            style="@style/Grey"
+            android:textSize="12sp"
+            android:paddingBottom="15dp"/>
+
+
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            style="@style/wrapping_button"
+            android:layout_below="@id/title_to_address"
+            android:layout_alignStart="@id/title_to_address"
+            android:text="Install"
+            app:bootstrapBrand="warning"
+            app:roundedCorners="true"
+            />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            style="@style/wrapping_button"
+            android:layout_below="@id/title_to_address"
+
+            android:text="Update"
+            app:bootstrapBrand="warning"
+            app:roundedCorners="true"
+
+            android:layout_centerInParent="true"
+            android:id="@+id/bootstrapButton"
+          />
+
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            style="@style/wrapping_button"
+            android:text="Delete"
+            app:bootstrapBrand="warning"
+            app:roundedCorners="true"
+            android:layout_below="@+id/title_to_address"
+
+            android:layout_toEndOf="@+id/bootstrapButton"
+
+           />
+
+
+    </RelativeLayout>
+</LinearLayout>
