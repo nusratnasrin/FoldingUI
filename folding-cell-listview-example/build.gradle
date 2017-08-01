@@ -4,12 +4,12 @@ group = 'com.ramotion.foldingcell.examples'
 version = '1.0.0'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
     defaultConfig {
         applicationId 'com.ramotion.foldingcell.examples.listview'
         minSdkVersion 14
-        targetSdkVersion 23
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
     }
@@ -27,7 +27,14 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile project(':folding-cell')
+    compile 'com.mikepenz:fontawesome-typeface:4.7.0.0@aar'
     compile 'com.beardedhen:androidbootstrap:2.3.1'
-    compile 'com.android.support:appcompat-v7:23.2.1'
-    compile 'com.android.support:support-v4:23.2.1'
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile('com.mikepenz:materialdrawer:5.9.0@aar') {
+        transitive = true
+    }
+    compile 'com.mikepenz:google-material-typeface:2.2.0.1@aar'
+
 }

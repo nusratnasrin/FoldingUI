@@ -1,0 +1,46 @@
+{
+  "apps":[
+    {
+      "id":"phone_sensor",
+      "title": "Phone Sensor",
+      "description":"Includes GPS, accelerometer, gyrometer, and ambient light sensors",
+      "icon": "phonesensor.png",
+      "detail_description":"Phone Sensor: Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets."
+,
+      "version": "1.2.1",
+      "update":"25 April 2017"
+
+    },
+    {
+      "id":"auto_sense",
+      "title": "AutoSense",
+      "description":"Includes a 3-axis accelerometer, a RIP sensor, an ECG, a GSR sensor, and a skin temperature sensor",
+      "icon": "autosense.png",
+      "detail_description":"AutoSense: Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets."
+    ,
+      "version": "1.2.2",
+      "update":"25 May 2017"
+    },
+    {
+      "id":"motion_sense",
+      "title": "MotionSense",
+      "description":"Includes optical heart rate, 3-axis accelerometer/gyro, ambient light, skin temperature, UV sensor, capacitive sensor, galvanic skin response, and barometer",
+      "icon": "motionsense.png",
+      "detail_description":"MotionSense: Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets."
+    ,
+      "version": "1.2.3",
+      "update":"25 June 2017"
+    },
+    {
+      "id":"self_report",
+      "title": "Self Report",
+      "description":"Allows a participant to record information about activities or behaviors",
+      "icon": "selfreport.png",
+      "detail_description":"Self Report: Android is a mobile operating system developed by Google, based on the Linux kernel and designed primarily for touchscreen mobile devices such as smartphones and tablets."
+    ,
+      "version": "1.2.4",
+      "update":"25 July 2017"
+    }
+  ]
+
+}

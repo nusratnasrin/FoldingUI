@@ -31,12 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="centerCrop"
-            android:src="@drawable/inside" />
 
-
-
-
-
+            />
 
     </RelativeLayout>
 
@@ -76,7 +72,7 @@
                 android:src="@drawable/img4" />
 
             <TextView
-                android:id="@+id/content_name_view"
+                android:id="@+id/textview_content_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@id/content_avatar"
@@ -90,13 +86,13 @@
 
 
             <TextView
-                android:id="@+id/content_name_view1"
+                android:id="@+id/textview_content_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="2dp"
                 android:layout_marginStart="10dp"
                 android:layout_toEndOf="@id/content_avatar"
-                android:layout_below="@id/content_name_view"
+                android:layout_below="@id/textview_content_title"
                 android:text="Collects phone sensor data"
                 android:textColor="@color/titleBadgeText"
                 android:textSize="12sp"
@@ -127,7 +123,7 @@
 
         <!-- request button -->
         <TextView
-            android:id="@+id/content_request_btn"
+            android:id="@+id/textview_content_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -165,7 +161,7 @@
                     />
 
                 <TextView
-                    android:id="@+id/content_delivery_time"
+                    android:id="@+id/textview_version"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@id/content_delivery_date_badge"
@@ -176,11 +172,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/content_delivery_date"
+                    android:id="@+id/textview_version_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@id/content_delivery_time"
-                    android:layout_below="@id/content_delivery_time"
+                    android:layout_alignStart="@id/textview_version"
+                    android:layout_below="@id/textview_version"
                     android:text="@string/delivery_date_mock"
                     android:textColor="@color/mainTextColor"
                     android:textSize="14sp" />
@@ -202,7 +198,7 @@
                     android:text="@string/deadline_badge" />
 
                 <TextView
-                    android:id="@+id/content_deadline_time"
+                    android:id="@+id/textview_update"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignStart="@id/content_deadline_badge"
@@ -213,11 +209,11 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/content_deadline_date"
+                    android:id="@+id/textview_update_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignStart="@id/content_deadline_time"
-                    android:layout_below="@id/content_deadline_time"
+                    android:layout_alignStart="@id/textview_update"
+                    android:layout_below="@id/textview_update"
                     android:text="25 April 2017"
                     android:textColor="@color/mainTextColor"
                     android:textSize="12sp" />
@@ -244,6 +240,8 @@
             app:bootstrapBrand="warning"
             app:roundedCorners="true"
             android:padding= "50dp"
+            android:enabled="false"
+            app:showOutline="true"
 
             />
         <com.beardedhen.androidbootstrap.BootstrapButton

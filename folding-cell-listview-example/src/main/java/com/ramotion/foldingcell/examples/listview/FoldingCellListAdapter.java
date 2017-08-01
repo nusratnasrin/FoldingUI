@@ -1,7 +1,6 @@
 package com.ramotion.foldingcell.examples.listview;
 
 import android.content.Context;
-import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,20 +18,20 @@ import java.util.List;
  * Simple example of ListAdapter for using with Folding Cell
  * Adapter holds indexes of unfolded elements for correct work with default reusable views behavior
  */
-public class FoldingCellListAdapter extends ArrayAdapter<Item> {
+public class FoldingCellListAdapter extends ArrayAdapter<App> {
 
     private HashSet<Integer> unfoldedIndexes = new HashSet<>();
     private View.OnClickListener defaultRequestBtnClickListener;
 
 
-    public FoldingCellListAdapter(Context context, List<Item> objects) {
+    public FoldingCellListAdapter(Context context, List<App> objects) {
         super(context, 0, objects);
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         // get item for selected view
-        Item item = getItem(position);
+        App app = getItem(position);
         // if cell is exists - reuse it, if not - create the new one from resource
         FoldingCell cell = (FoldingCell) convertView;
         ViewHolder viewHolder;
@@ -41,15 +40,18 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
             LayoutInflater vi = LayoutInflater.from(getContext());
             cell = (FoldingCell) vi.inflate(R.layout.cell, parent, false);
             // binding view parts to view holder
-            viewHolder.abc = (ImageView) cell.findViewById(R.id.imageView2);
-          //  viewHolder.price = (TextView) cell.findViewById(R.id.title_price);
          //   viewHolder.time = (TextView) cell.findViewById(R.id.title_time_label);
         //    viewHolder.date = (TextView) cell.findViewById(R.id.title_date_label);
-            viewHolder.fromAddress = (TextView) cell.findViewById(R.id.title_from_address);
-            viewHolder.toAddress = (TextView) cell.findViewById(R.id.title_to_address);
+            viewHolder.title = (TextView) cell.findViewById(R.id.textview_title);
+            viewHolder.description = (TextView) cell.findViewById(R.id.textview_description);
         //    viewHolder.requestsCount = (TextView) cell.findViewById(R.id.title_requests_count);
         //    viewHolder.pledgePrice = (TextView) cell.findViewById(R.id.title_pledge);
-          viewHolder.contentRequestBtn = (TextView) cell.findViewById(R.id.content_request_btn);
+       //   viewHolder.contentRequestBtn = (TextView) cell.findViewById(R.id.content_request_btn);
+            viewHolder.content_title = (TextView) cell.findViewById(R.id.textview_content_title);
+            viewHolder.content_description= (TextView) cell.findViewById(R.id.textview_content_description);
+            viewHolder.content_details=(TextView)cell.findViewById(R.id.textview_content_detail);
+            viewHolder.version=(TextView)cell.findViewById(R.id.textview_version_number);
+            viewHolder.update=(TextView)cell.findViewById(R.id.textview_update_date);
             cell.setTag(viewHolder);
         } else {
             // for existing cell set valid valid state(without animation)
@@ -65,173 +67,25 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
      //   viewHolder.price.setText(item.getPrice());
 //        viewHolder.time.setText(item.getTime());
 //        viewHolder.date.setText(item.getDate());
-        viewHolder.fromAddress.setText(item.getFromAddress());
-        viewHolder.toAddress.setText(item.getToAddress());
+
+        viewHolder.title.setText(app.getTitle());
+        viewHolder.description.setText(app.getDescription());
+        viewHolder.content_title.setText(app.getTitle());
+        viewHolder.content_description.setText(app.getDescription());
+        viewHolder.content_details.setText(app.getDetail_description());
+        viewHolder.version.setText(app.getVersion());
+        viewHolder.update.setText(app.getUpdate());
      //   viewHolder.requestsCount.setText(String.valueOf(item.getRequestsCount()));
    //     viewHolder.pledgePrice.setText(item.getPledgePrice());
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         // set custom btn handler for list item from that item
-        if (item.getRequestBtnClickListener() != null) {
-            viewHolder.contentRequestBtn.setOnClickListener(item.getRequestBtnClickListener());
+
+  /*      if (app.getRequestBtnClickListener() != null) {
+            viewHolder.contentRequestBtn.setOnClickListener(app.getRequestBtnClickListener());
         } else {
             // (optionally) add "default" handler if no handler found in item
             viewHolder.contentRequestBtn.setOnClickListener(defaultRequestBtnClickListener);
         }
-
+*/
 
         return cell;
     }
@@ -264,10 +118,16 @@ public class FoldingCellListAdapter extends ArrayAdapter<Item> {
     private static class ViewHolder {
         ImageView abc;
       //  TextView price;
-        TextView contentRequestBtn;
+    //    TextView contentRequestBtn;
         TextView pledgePrice;
-        TextView fromAddress;
-        TextView toAddress;
+        TextView title;
+        TextView description;
+        TextView content_title;
+        TextView content_description;
+        TextView content_details;
+        TextView version;
+        TextView update;
+
       //  TextView requestsCount;
         TextView date;
         TextView time;
