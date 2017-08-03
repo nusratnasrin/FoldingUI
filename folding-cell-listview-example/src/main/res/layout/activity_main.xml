@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-
-
 <ListView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainListView"
@@ -19,7 +17,5 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:scrollbars="none"
     tools:context=".listview.MainActivity" />
-
-
 
 

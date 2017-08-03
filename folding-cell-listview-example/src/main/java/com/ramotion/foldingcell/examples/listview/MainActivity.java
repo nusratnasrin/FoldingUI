@@ -1,5 +1,6 @@
 package com.ramotion.foldingcell.examples.listview;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -49,20 +50,31 @@ public class MainActivity extends AppCompatActivity {
         final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("mCerebrum");
-        final IProfile profile = new ProfileDrawerItem().withName("Mike Penz").withEmail("mikepenz@gmail.com");
+        getSupportActionBar().setHomeActionContentDescription("Application List");
+        final IProfile profile = new ProfileDrawerItem().withName("Nusrat Nasrin").withEmail("nusrat27@gmail.com");
 // Create the AccountHeader
         headerResult = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withCompactStyle(true)
                 .withHeaderBackground(R.drawable.header)
-/*
                 .addProfiles(
                         profile,
                         //don't ask but google uses 14dp for the add account icon in gmail but 20dp for the normal icons (like manage account)
-                        new ProfileSettingDrawerItem().withName("Add Account").withDescription("Add new GitHub Account").withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_plus).actionBar().paddingDp(5).colorRes(R.color.material_drawer_dark_primary_text)).withIdentifier(PROFILE_SETTING),
+                        new ProfileSettingDrawerItem().withName("Login").withIcon(GoogleMaterial.Icon.gmd_settings).withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
+                            @Override
+                            public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                                // do something with the clicked item :
+                            //    Toast toast= Toast.makeText(MainActivity.this, "login enter", Toast.LENGTH_SHORT);
+                              //  toast.show();
+                                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                                startActivity(i);
+
+                                return false;
+                            }
+                        }),
+                        new ProfileSettingDrawerItem().withName("Logout").withDescription("Logout").withIcon(new IconicsDrawable(this, GoogleMaterial.Icon.gmd_phone_locked).actionBar().paddingDp(5).colorRes(R.color.material_drawer_dark_primary_text)).withIdentifier(PROFILE_SETTING),
                         new ProfileSettingDrawerItem().withName("Manage Account").withIcon(GoogleMaterial.Icon.gmd_settings)
                 )
-*/
                 .withSavedInstance(savedInstanceState)
                 .build();
 //Create the drawer
@@ -75,8 +87,8 @@ public class MainActivity extends AppCompatActivity {
                         new PrimaryDrawerItem().withName("Home").withIcon(FontAwesome.Icon.faw_home).withIdentifier(1),
                         new SecondaryDrawerItem().withName("Privacy").withIcon(FontAwesome.Icon.faw_lock),
                         new SectionDrawerItem().withName("Settings"),
-                        new SecondaryDrawerItem().withName("Application").withIcon(FontAwesome.Icon.faw_cog),
-                        new SecondaryDrawerItem().withName("Device").withIcon(FontAwesome.Icon.faw_cog),
+                        new SecondaryDrawerItem().withName("Application List").withIcon(FontAwesome.Icon.faw_cog),
+                        new SecondaryDrawerItem().withName("Device Setup").withIcon(FontAwesome.Icon.faw_cog),
                         new SecondaryDrawerItem().withName("Set Reminders").withIcon(FontAwesome.Icon.faw_clock_o),
                         new SectionDrawerItem().withName("Report"),
                         new SecondaryDrawerItem().withName("Data Collection").withIcon(FontAwesome.Icon.faw_cog),
@@ -84,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                         new SecondaryDrawerItem().withName("Plot").withIcon(FontAwesome.Icon.faw_cog),
                         new SectionDrawerItem().withName("About"),
                         new SecondaryDrawerItem().withName("Who we are").withIcon(FontAwesome.Icon.faw_github),
-                        new SecondaryDrawerItem().withName("Terms and Conditions").withIcon(FontAwesome.Icon.faw_question).withEnabled(false),
+                        new SecondaryDrawerItem().withName("Terms and Conditions").withIcon(FontAwesome.Icon.faw_question),
                         new SecondaryDrawerItem().withName("Privacy Policy").withIcon(FontAwesome.Icon.faw_github),
                         new SecondaryDrawerItem().withName("Contact").withIcon(FontAwesome.Icon.faw_bullhorn),
                         new SecondaryDrawerItem().withName("Feedback").withIcon(FontAwesome.Icon.faw_comment)
